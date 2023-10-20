@@ -4,7 +4,7 @@ title: 我的Blog
 ---
 
 <h2>{{ page.title }}</h2>
-<p>最新文章</p>
+<p class="app">最新文章</p>
 <ul>
   {% for post in site.posts %}
   <li>
@@ -13,3 +13,10 @@ title: 我的Blog
   </li>
   {% endfor %}
 </ul>
+
+<style>
+.app{
+  color: brown;
+  font-size: large;
+}
+</style>
