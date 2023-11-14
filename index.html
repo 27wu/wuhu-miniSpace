@@ -4,6 +4,12 @@
     <meta charset="utf-8" />
     <title>wuhu</title>
     <style>
+      .show {
+        display: block;
+      }
+      .unshow {
+        display: none;
+      }
       .page {
         width: 100vw;
         height: 100vh;
@@ -29,14 +35,31 @@
         height: fit-content;
       }
     </style>
+    <script>
+      var list = 'show';
+      var article = 'unshow';
+      function toResume() {
+        list = 'unshow';
+        article = 'show';
+      }
+    </script>
   </head>
-  <body style="margin: 0;">
+  <body style="margin: 0">
     <div class="page">
       <div class="inner-page">
         <p class="title">吴虎的网络日志</p>
         <div class="line"></div>
         <div class="content">
-          111
+          <div :class="list">
+            <i @click="toResume">个人简介</i>
+          </div>
+          <div :class="article">
+            <iframe
+              src="./article/Resume.vue"
+              width="500"
+              height="500"
+            ></iframe>
+          </div>
         </div>
       </div>
     </div>
